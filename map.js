@@ -5,10 +5,9 @@ L.tileLayer('https://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}', {
     attribution: '© Google Satellite Map'
 }).addTo(map);
 
+map.locate({enableHighAccuracy: true, setView: true, maxZoom: 18,  watch: true});
 
-
-if (e.accuracy < 5){
-    map.locate({enableHighAccuracy: true, setView: true, maxZoom: 18,  watch: true});
+if (e.accuracy < ){
     map.stopLocate()
 }
 
@@ -17,6 +16,9 @@ function onLocationFound(e) {
     L.marker(e.latlng).addTo(map)
     .bindPopup("Akurasi anda adalah : <b>"  + radius + "</b> meter, Klik <button class='btn btn-success btn-sm' onclick='Copy()'>Copy</button><div style='display:none' id='copydata'>https://www.google.com/maps/place/"+ e.latlng.lat.toFixed(5) +","+ e.latlng.lng.toFixed(5) +" (Akurasi Sharelok  adalah : "  + radius + " meter. Powered by BPN Lampung Timur)</div>").openPopup();
     L.circle(e.latlng, radius).addTo(map);
+    if (e.accuracy < 10){
+        map.stopLocate()
+    }
 }
 
 map.on('locationfound', onLocationFound);
