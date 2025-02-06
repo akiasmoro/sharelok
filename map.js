@@ -38,4 +38,7 @@ function Copy() {
         title: "Sukse copy sharelok",
         icon: "success",
       });
+      $( "body" ).removeClass( "swal2-shown" )
+      $( "body" ).removeClass( "swal2-height-auto" )
+       
 }
