@@ -21,6 +21,7 @@ function onLocationError(e) {
 }
 
 if (e.accuracy < 10){
+    alert('stop')
     map.stopLocate()
 }
 map.on('locationerror', onLocationError);
