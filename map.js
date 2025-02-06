@@ -5,7 +5,7 @@ L.tileLayer('https://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}', {
     attribution: '© Google Satellite Map'
 }).addTo(map);
 
-map.locate({enableHighAccuracy: true, setView: true, maxZoom: 18});
+map.locate({enableHighAccuracy: true, setView: true, maxZoom: 18,  frequency: 1, watch: true});
 
 function onLocationFound(e) {
     var radius = e.accuracy.toFixed(2);
