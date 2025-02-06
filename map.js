@@ -7,9 +7,7 @@ L.tileLayer('https://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}', {
 
 map.locate({enableHighAccuracy: true, setView: true, maxZoom: 18,  watch: true});
 
-if (e.accuracy < 10){
-    map.stopLocate()
-}
+
 
 function onLocationFound(e) {
     var radius = e.accuracy.toFixed(2);
