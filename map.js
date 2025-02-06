@@ -12,6 +12,10 @@ function onLocationFound(e) {
     L.marker(e.latlng).addTo(map)
     .bindPopup("Akurasi anda adalah : <b>"  + radius + "</b> meter, Klik <button class='btn btn-success btn-sm' onclick='Copy()'>Copy</button><div style='display:none' id='copydata'>https://www.google.com/maps/place/"+ e.latlng.lat.toFixed(5) +","+ e.latlng.lng.toFixed(5) +" (Akurasi Sharelok  adalah : "  + radius + " meter. Powered by BPN Lampung Timur)</div>").openPopup();
     L.circle(e.latlng, radius).addTo(map);
+    if (radius < 10){
+        alert('stop')
+        map.stopLocate()
+    }
 }
 
 map.on('locationfound', onLocationFound);
@@ -20,10 +24,7 @@ function onLocationError(e) {
     alert(e.message);
 }
 
-if (e.accuracy < 10){
-    alert('stop')
-    map.stopLocate()
-}
+
 map.on('locationerror', onLocationError);
 
 function Copy() {
