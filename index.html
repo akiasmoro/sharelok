@@ -24,11 +24,44 @@
     </style>
         <main><center><h1>Share Lokasi</h1></center></main>
         <div id="map"></div>
+        <!-- Button trigger modal -->
+
+
+        <!-- Modal -->
+        <style type="text/css">
+            p {margin-bottom: -1em;  margin-top: 0em;} 
+           </style>
+        <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Informasi</h5>
+                </div>
+                <div class="modal-body">
+                <b>Tahapan melakukan sharelok pada BPN Lampung Timur : </b><br/>
+                &nbsp; <p>1. Pemohon/Penggunan melakukan sharelok pada lokasi bidang tanah yang akan diproses. </p>
+                &nbsp; <p>2. Klik tombol setuju pada halaman ini. </p>
+                &nbsp; <p>3. Akurasi minimum yaitu 10 meter. </p>
+                &nbsp; <p>4. Apabila sudah dibawah akurasi minimum, klik tombol copy untuk selanjutnya dishare. </p>
+                &nbsp; <p>5. Apabila akurasi tidak dibawah 10 meter, refresh/ulangin halaman ini.
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Setuju</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
     <script src="leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js"integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="map.js"></script>
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            $('#myModal').modal('show');
+        });
+    </script>
 </body>
   </body>
 </html>
