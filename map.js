@@ -20,6 +20,9 @@ function onLocationError(e) {
     alert(e.message);
 }
 
+if (e.accuracy < 10){
+    map.stopLocate()
+}
 map.on('locationerror', onLocationError);
 
 function Copy() {
