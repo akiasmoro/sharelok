@@ -1,11 +1,11 @@
 var map = L.map('map').fitWorld();
 
 L.tileLayer('https://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}', {
-    maxZoom: 19,
+    maxZoom: 21,
     attribution: '© Google Satellite Map'
 }).addTo(map);
 
-map.locate({setView: true, maxZoom: 16});
+map.locate({setView: true, maxZoom: 20});
 
 function onLocationFound(e) {
     var radius = e.accuracy.toFixed(2);
