@@ -17,7 +17,7 @@ function onLocationFound(e) {
         UnFreezeUI();
         map.stopLocate()
 
-        window.location = "https://api.whatsapp.com/send?text=Hi";
+        window.location = "whatsapp://send?text=The text to share!";
 
     }
 }
