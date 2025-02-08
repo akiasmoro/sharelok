@@ -17,7 +17,7 @@ function onLocationFound(e) {
         UnFreezeUI();
         map.stopLocate()
 
-        window.open("https://www.geeksforgeeks.org");
+        window.location = "http://www.yoururl.com";
 
     }
 }
