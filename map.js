@@ -11,11 +11,11 @@ function onLocationFound(e) {
     var radius = e.accuracy.toFixed(2);
 
     if (radius < 5){
-        UnFreezeUI();
-        map.stopLocate()
         L.marker(e.latlng).addTo(map)
         .bindPopup("Akurasi anda adalah : <b>"  + radius + "</b> meter, Klik <button class='btn btn-success btn-sm' onclick='Copy()'>Copy</button><div style='display:none' id='copydata'>https://www.google.com/maps/place/"+ e.latlng.lat.toFixed(5) +","+ e.latlng.lng.toFixed(5) +" (Akurasi Sharelok  adalah : "  + radius + " meter. Powered by BPN Lampung Timur)</div>").openPopup();
         L.circle(e.latlng, radius).addTo(map);
+        map.stopLocate()
+        UnFreezeUI();
     }
 }
 
