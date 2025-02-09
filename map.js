@@ -19,14 +19,14 @@ function onLocationFound(e) {
     .bindPopup("Akurasi anda adalah : <b>"  + radius + "</b> meter").openPopup();
     // .bindPopup("Akurasi anda adalah : <b>"  + radius + "</b> meter, Klik <button class='btn btn-success btn-sm' onclick='Copy()'>Copy</button><div style='display:none' id='copydata'>https://www.google.com/maps/place/"+ e.latlng.lat.toFixed(5) +","+ e.latlng.lng.toFixed(5) +" (Akurasi Sharelok  adalah : "  + radius + " meter. Powered by BPN Lampung Timur)</div>").openPopup();
     L.circle(e.latlng, radius).addTo(map);
-    if (radius < 6){
+    if (radius < 5){
         UnFreezeUI();
         map.stopLocate()
         Swal.fire({
             title: "Berhasil mendapatkan koordinat.",
             icon: "success",
           });
-          window.location.href = "whatsapp://send?text=https://www.google.com/maps/place/"+ e.latlng.lat.toFixed(5) +","+ e.latlng.lng.toFixed(5) +" (Akurasi Sharelok  adalah : "  + radius + " meter. Powered by BPN Lampung Timur)";
+          setTimeout (window.location.href = "whatsapp://send?text=https://www.google.com/maps/place/"+ e.latlng.lat.toFixed(5) +","+ e.latlng.lng.toFixed(5) +" (Akurasi Sharelok  adalah : "  + radius + " meter. Powered by BPN Lampung Timur)", 5000);
     }
 }
 
