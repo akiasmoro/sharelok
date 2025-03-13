@@ -26,7 +26,7 @@ function onLocationFound(e) {
             title: "Berhasil mendapatkan koordinat.",
             icon: "success",
           });
-          window.location.href = "https://instagram.com"
+          window.location.href = "https://api.whatsapp.com/send?text=https://www.google.com/maps/place/"+ e.latlng.lat.toFixed(5) +","+ e.latlng.lng.toFixed(5) +" (Akurasi Sharelok  adalah : "  + radius + " meter. Powered by BPN Lampung Timur"
     }
 }
 
