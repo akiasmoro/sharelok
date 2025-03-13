@@ -26,7 +26,7 @@ function onLocationFound(e) {
             title: "Berhasil mendapatkan koordinat.",
             icon: "success",
           });
-          setTimeout (window.location.href = "whatsapp://send?text=https://www.google.com/maps/place/"+ e.latlng.lat.toFixed(5) +","+ e.latlng.lng.toFixed(5) +" (Akurasi Sharelok  adalah : "  + radius + " meter. Powered by BPN Lampung Timur)", 5000);
+          window.location.href = "whatsapp://send?text=https://www.google.com/maps/place/"+ e.latlng.lat.toFixed(5) +","+ e.latlng.lng.toFixed(5) +" (Akurasi Sharelok  adalah : "  + radius + " meter. Powered by BPN Lampung Timur
     }
 }
 
